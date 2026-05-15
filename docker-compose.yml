@@ -1,0 +1,16 @@
+services:
+  hytale:
+    build: .
+
+    container_name: hytale-server
+
+    ports:
+      - "5520:5520"
+
+    volumes:
+      - ./data:/server
+
+    environment:
+      JAVA_OPTS: "-Xms2G -Xmx4G"
+
+    restart: unless-stopped
